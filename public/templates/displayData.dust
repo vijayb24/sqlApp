@@ -1,0 +1,37 @@
+{>"layouts/master" /}
+
+{<body}
+    {! <h1>{@pre type="content" key="greeting"/}</h1> !}
+    	<table border=1>
+    		<tr>
+                <td>Serial No.</td>
+    			<td>Emp Id</td>
+    			<td>Emp Name</td>
+    			<td>Department</td>
+    			<td>Age</td>
+                <td>Action(s)</td>
+    		</tr>
+    		{#items}
+    		<tr>
+                <td>{@math key=$idx method="add" operand="1"/}</td>
+	    		<td>{empId}</td>
+	    		<td>{empName}</td>
+	    		<td>{department}</td>
+	    		<td>{age}</td>
+                <td><a href="edit/{empId}" name="">edit</a> | <a href=remove>remove</a></td>
+	    	</tr>
+	    	{/items}
+
+            {#eData}
+                <tr>
+                    <td>{@math key=$idx method="add" operand="1"/}</td>
+                    <td>{empId}</td>
+                    <td>{empName}</td>
+                    <td>{department}</td>
+                    <td>{age}</td>
+                    <td><a href="edit/{empId}" name="">edit</a> | <a href=remove>remove</a></td>
+                </tr>
+            {/eData}
+	    </table>
+    
+{/body}
